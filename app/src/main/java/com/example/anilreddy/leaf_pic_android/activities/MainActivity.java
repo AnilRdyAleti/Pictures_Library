@@ -8,9 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.example.anilreddy.leaf_pic_android.R;
+import com.example.anilreddy.leaf_pic_android.fragments.AlbumsFragment;
 import com.example.anilreddy.leaf_pic_android.view.navigation_drawer.NavigationDrawer;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,17 +38,28 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.coordinator_main_layout)
     CoordinatorLayout mainLayout;
 
-//    private AlbumsFragment albumsFragment;
+    private AlbumsFragment albumsFragment;
 //    private RvMediaFragment rvMediaFragment;
 //    private TimelineFragment timelineFragment;
 
     private boolean pickMode = false;
     private Unbinder unbinder;
 
-    @FragmentMode private int fragmentMode;
+    @FragmentMode
+    private int fragmentMode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        unbinder = ButterKnife.bind(this);
+
+        initUi();
+    }
+
+    public void initUi() {
+        setSupportActionBar(toolbar);
+//        setupNavigationDrawer();
+//        setupFAB();
     }
 }

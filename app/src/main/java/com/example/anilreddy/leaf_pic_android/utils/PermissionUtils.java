@@ -26,7 +26,7 @@ public final class PermissionUtils {
         return checkPermissions(context, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE);
     }
 
-    private static void requestPermissions(Object o, int permissionId, String... permissions) {
+    public static void requestPermissions(Object o, int permissionId, String... permissions) {
         if (o instanceof Activity) {
             ActivityCompat.requestPermissions((AppCompatActivity) o, permissions, permissionId);
         }

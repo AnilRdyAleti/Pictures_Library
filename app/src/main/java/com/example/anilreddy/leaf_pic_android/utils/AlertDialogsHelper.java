@@ -64,4 +64,5 @@ public class AlertDialogsHelper {
         builder.setView(dialogLayout);
         return builder.create();
     }
+
 }
